@@ -30,7 +30,7 @@
   # };
 
   # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Australia/Sydney";
 
   nixpkgs.config.allowUnfree = true;
 
