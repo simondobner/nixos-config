@@ -47,6 +47,8 @@
      xsel
      firefox
      nix-repl
+     cabal-install
+     cabal2nix
    ];
 
   # List services that you want to enable:
