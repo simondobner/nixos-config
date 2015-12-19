@@ -49,6 +49,7 @@
      nix-repl
      cabal-install
      cabal2nix
+     haskellPackages.hdevtools
    ];
 
   # List services that you want to enable:
