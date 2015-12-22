@@ -32,6 +32,14 @@
   # Set your time zone.
   time.timeZone = "Australia/Sydney";
 
+  nix = {
+    binaryCaches = [ https://cache.nixos.org http://hydra.cryp.to ];
+    binaryCachePublicKeys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "hydra.cryp.to-1:8g6Hxvnp/O//5Q1bjjMTd5RO8ztTsG8DKPOAg9ANr2g="
+    ];
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search by name, run:
