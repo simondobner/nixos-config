@@ -57,7 +57,6 @@
      nix-repl
      cabal-install
      cabal2nix
-     haskellPackages.hdevtools
    ];
 
   # List services that you want to enable:
@@ -67,6 +66,8 @@
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
+
+  services.locate.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
