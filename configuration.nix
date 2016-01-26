@@ -57,6 +57,7 @@
      nix-repl
      cabal-install
      cabal2nix
+     nix-prefetch-scripts
    ];
 
   # List services that you want to enable:
