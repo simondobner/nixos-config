@@ -60,6 +60,17 @@
      nix-prefetch-scripts
    ];
 
+   fonts = {
+       enableFontDir = true;
+       enableGhostscriptFonts = true;
+       fonts = with pkgs; [
+           corefonts
+           inconsolata
+           ubuntu_font_family
+           unifont
+       ];
+   };
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
