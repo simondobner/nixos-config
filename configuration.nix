@@ -86,6 +86,7 @@
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e";
   services.xserver.windowManager.xmonad.enable = true;
+  services.xserver.windowManager.xmonad.enableContribAndExtras = true;
 
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.kdm.enable = true;
