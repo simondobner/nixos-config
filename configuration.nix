@@ -58,6 +58,7 @@
      cabal-install
      cabal2nix
      nix-prefetch-scripts
+     dmenu
    ];
 
    fonts = {
