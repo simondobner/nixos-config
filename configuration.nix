@@ -40,7 +40,19 @@
     ];
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+      allowUnfree = true;
+
+      firefox = {
+          enableAdobeFlash = true;
+      };
+
+      packageOverrides = pkgs: rec {
+          firefox-unwrapped = pkgs.firefox-unwrapped.override {
+              enableGTK3 = true;
+          };
+      };
+  };
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
