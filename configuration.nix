@@ -101,6 +101,14 @@
   services.xserver.windowManager.xmonad.enable = true;
   services.xserver.windowManager.xmonad.enableContribAndExtras = true;
 
+  services.postgresql.enable = true;
+  services.postgresql.package = pkgs.postgresql95;
+  services.postgresql.authentication =
+      ''
+        local all all ident
+        host all all 127.0.0.1/32 md5
+      '';
+
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.kdm.enable = true;
   # services.xserver.desktopManager.kde4.enable = true;
