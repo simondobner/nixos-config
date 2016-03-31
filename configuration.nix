@@ -72,6 +72,7 @@
      nix-prefetch-scripts
      openjdk
      dmenu
+     maven
    ];
 
    fonts = {
