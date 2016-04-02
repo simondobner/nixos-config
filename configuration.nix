@@ -19,7 +19,7 @@
   virtualisation.virtualbox.guest.enable = true;
   boot.initrd.checkJournalingFS = false;
 
-  # networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "dev"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Select internationalisation properties.
