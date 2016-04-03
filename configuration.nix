@@ -60,7 +60,7 @@
      file
      wget
      git
-     vim
+     vim_configurable
      gnumake
      python3
      graphviz
