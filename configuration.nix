@@ -76,6 +76,7 @@
      haskellPackages.xmonad-extras
      dmenu
      maven
+     ctags
    ];
 
    fonts = {
