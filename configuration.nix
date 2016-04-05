@@ -72,6 +72,7 @@
      cabal2nix
      nix-prefetch-scripts
      openjdk
+     eclipses.eclipse-ee
      haskellPackages.xmonad
      haskellPackages.xmonad-contrib
      haskellPackages.xmonad-extras
