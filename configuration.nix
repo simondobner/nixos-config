@@ -80,6 +80,8 @@
      dmenu
      maven
      ctags
+     zip
+     unzip
    ];
 
    fonts = {
