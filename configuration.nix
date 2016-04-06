@@ -61,6 +61,7 @@
      file
      wget
      git
+     gitAndTools.hub
      vim_configurable
      gnumake
      python3
