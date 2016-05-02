@@ -69,6 +69,7 @@
      ctags
      zip
      unzip
+     tree
    ];
 
    fonts = {
