@@ -70,6 +70,7 @@
      zip
      unzip
      tree
+     which
    ];
 
    fonts = {
