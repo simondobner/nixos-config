@@ -71,6 +71,7 @@
      unzip
      tree
      which
+     keychain
    ];
 
    fonts = {
