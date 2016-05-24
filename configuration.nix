@@ -72,6 +72,7 @@
      tree
      which
      keychain
+     telnet
    ];
 
    fonts = {
