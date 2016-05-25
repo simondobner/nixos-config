@@ -73,6 +73,7 @@
      which
      keychain
      telnet
+     nload
    ];
 
    fonts = {
