@@ -14,6 +14,7 @@
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/sda";
 
+  virtualisation.docker.enable = true;
   virtualisation.virtualbox.guest.enable = true;
   boot.initrd.checkJournalingFS = false;
 
@@ -110,7 +111,7 @@
     isNormalUser = true;
     home = "/home/lazar";
     description = "Lazar Bodor";
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "docker" "wheel" ];
   };
   
 
