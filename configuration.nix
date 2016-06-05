@@ -75,6 +75,7 @@
      keychain
      telnet
      nload
+     gcc
    ];
 
    fonts = {
