@@ -12,9 +12,6 @@
 
   hardware.bluetooth.enable = false;
 
-  # boot.loader.gummiboot.enable = true;
-  # boot.loader.grub.efiSupport = true;
-  # boot.loader.grub.device = "nodev";
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -92,9 +89,6 @@
        ];
    };
 
-  # services.openssh.enable = true;
-  # services.printing.enable = true;
-
   programs.ssh.startAgent = true;
 
   services.upower.enable = true;
@@ -105,9 +99,6 @@
   services.xserver.synaptics.palmDetect = true;
   services.xserver.synaptics.twoFingerScroll = true;
   services.xserver.xkbOptions = "terminate:ctrl_alt_bksp, ctrl:nocaps";
-  # services.xserver.layout = "us";
-  # services.xserver.xkbOptions = "eurosign:e";
-  # services.xserver.displayManager.kdm.enable = true;
   services.xserver.windowManager.xmonad.enable = true;
   services.xserver.windowManager.xmonad.enableContribAndExtras = true;
 
