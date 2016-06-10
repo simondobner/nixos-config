@@ -12,14 +12,19 @@
 
   hardware.bluetooth.enable = false;
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
 
-  virtualisation.docker.enable = true;
   boot.initrd.checkJournalingFS = false;
 
-  networking.hostName = "dev";
-  networking.wireless.enable = true;
+  virtualisation.docker.enable = true;
+
+  networking = {
+    hostName = "dev";
+    wireless.enable = true;
+  };
 
   time.timeZone = "Australia/Sydney";
 
@@ -94,13 +99,15 @@
   services.upower.enable = true;
   services.locate.enable = true;
 
-  services.xserver.enable = true;
-  services.xserver.synaptics.enable = true;
-  services.xserver.synaptics.palmDetect = true;
-  services.xserver.synaptics.twoFingerScroll = true;
-  services.xserver.xkbOptions = "terminate:ctrl_alt_bksp, ctrl:nocaps";
-  services.xserver.windowManager.xmonad.enable = true;
-  services.xserver.windowManager.xmonad.enableContribAndExtras = true;
+  services.xserver = {
+    enable = true;
+    synaptics.enable = true;
+    synaptics.palmDetect = true;
+    synaptics.twoFingerScroll = true;
+    xkbOptions = "terminate:ctrl_alt_bksp, ctrl:nocaps";
+    windowManager.xmonad.enable = true;
+    windowManager.xmonad.enableContribAndExtras = true;
+  };
 
   services.postgresql = {
     enable = true;
