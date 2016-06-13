@@ -51,6 +51,10 @@
       };
   };
 
+  # Set SSL_CERT_FILE, so that nix-shell doesn't make it up.
+  # See https://github.com/NixOS/nixpkgs/issues/13744.
+  environment.variables."SSL_CERT_FILE" = "/etc/ssl/certs/ca-bundle.crt";
+
   environment.systemPackages = with pkgs; [
      file
      wget
