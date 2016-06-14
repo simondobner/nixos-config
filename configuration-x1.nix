@@ -126,6 +126,11 @@
         '';
   };
 
+  security.sudo = {
+    enable = true;
+    wheelNeedsPassword = false;
+  };
+
   users.extraUsers.lazar = {
     isNormalUser = true;
     home = "/home/lazar";
