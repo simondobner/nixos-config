@@ -56,6 +56,7 @@
   environment.variables."SSL_CERT_FILE" = "/etc/ssl/certs/ca-bundle.crt";
 
   environment.systemPackages = with pkgs; [
+     xorg.xbacklight
      file
      wget
      git
