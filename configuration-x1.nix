@@ -75,6 +75,7 @@
      haskellPackages.xmonad
      haskellPackages.xmonad-contrib
      haskellPackages.xmonad-extras
+     haskellPackages.X11
      dmenu
      maven
      ctags
