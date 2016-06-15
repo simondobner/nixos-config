@@ -105,23 +105,7 @@
   services.upower.enable = true;
   services.locate.enable = true;
 
-  services.acpid = {
-    enable = true;
-    handlers = {
-      mute = {
-        event = "button/mute.*";
-        action = "/run/current-system/sw/bin/amixer set Master toggle";
-      };
-      volumeUp = {
-        event = "button/volumeup.*";
-        action = "/run/current-system/sw/bin/amixer set Master 5+";
-      };
-      volumeDown = {
-        event = "button/volumedown.*";
-        action = "/run/current-system/sw/bin/amixer set Master 5-";
-      };
-    };
-  };
+  services.acpid.enable = true;
 
   services.xserver = {
     enable = true;
