@@ -29,7 +29,7 @@
   time.timeZone = "Australia/Sydney";
 
   nix = {
-    nixPath = [ "/home/lazar/dev" "nixos-config=/etc/nixos/configuration.nix" ];
+    nixPath = [ "/home/lbodor/dev" "nixos-config=/etc/nixos/configuration.nix" ];
     binaryCaches = [ https://cache.nixos.org http://hydra.cryp.to ];
     binaryCachePublicKeys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
@@ -135,9 +135,10 @@
     wheelNeedsPassword = false;
   };
 
-  users.extraUsers.lazar = {
+  users.extraUsers.lbodor = {
+    uid = 1000;
     isNormalUser = true;
-    home = "/home/lazar";
+    home = "/home/lbodor";
     description = "Lazar Bodor";
     extraGroups = [ "docker" "wheel" ];
   };
