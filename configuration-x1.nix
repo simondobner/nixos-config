@@ -105,11 +105,10 @@
   services.upower.enable = true;
   services.locate.enable = true;
 
-  services.acpid.enable = true;
-
   services.xserver = {
     enable = true;
     synaptics.enable = true;
+    synaptics.minSpeed = "1";
     synaptics.palmDetect = true;
     synaptics.twoFingerScroll = true;
     xkbOptions = "terminate:ctrl_alt_bksp, ctrl:nocaps";
