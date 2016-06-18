@@ -80,6 +80,7 @@
      dmenu
      maven
      ctags
+     tmux
      zip
      unzip
      tree
