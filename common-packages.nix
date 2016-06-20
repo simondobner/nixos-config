@@ -1,4 +1,22 @@
 pkgs: with pkgs;
 [
+  ctags
+  file
+  firefox
+  gcc
+  git
+  gitAndTools.hub
   gnumake
+  keychain
+  nix-prefetch-scripts
+  nix-repl
+  nload
+  telnet
+  tmux
+  tree
+  unzip
+  vim_configurable
+  wget
+  which
+  zip
 ]

@@ -24,6 +24,7 @@
 
   nixpkgs.config = {
     packageOverrides = pkgs: {
+      # TODO: factor out
       eclipse-ee-452 = pkgs.eclipses.buildEclipse {
         name = "eclipse-ee-4.5.2";
         description = "Eclipse EE IDE";
@@ -40,14 +41,11 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs;
-    (import ./common-packages.nix pkgs) ++ [
-    firefox
-    eclipse-ee-452
-    git
-    vim
-    wget
-    tmux
-  ];
+    import ./common-packages.nix pkgs ++
+    import ./java-packages.nix pkgs ++
+    import ./python-packages.nix pkgs ++ [
+      eclipse-ee-452
+    ];
 
   # List services that you want to enable:
 

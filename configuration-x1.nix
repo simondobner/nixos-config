@@ -54,52 +54,30 @@
   # See https://github.com/NixOS/nixpkgs/issues/13744.
   environment.variables."SSL_CERT_FILE" = "/etc/ssl/certs/ca-bundle.crt";
 
-  environment.systemPackages = with pkgs; [
-     xorg.xbacklight
-     file
-     wget
-     git
-     gitAndTools.hub
-     vim_configurable
-     gnumake
-     python3
-     graphviz
-     xsel
-     firefox
-     nix-repl
-     cabal-install
-     cabal2nix
-     nix-prefetch-scripts
-     openjdk
-     haskellPackages.xmobar
-     haskellPackages.xmonad
-     haskellPackages.xmonad-contrib
-     haskellPackages.xmonad-extras
-     haskellPackages.X11
-     dmenu
-     maven
-     ctags
-     tmux
-     zip
-     unzip
-     tree
-     which
-     keychain
-     telnet
-     nload
-     gcc
-   ];
+  environment.systemPackages = with pkgs;
+    import ./common-packages.nix pkgs ++
+    import ./java-packages.nix pkgs ++
+    import ./python-packages.nix pkgs ++ [
+      cabal2nix
+      dmenu
+      haskellPackages.X11
+      haskellPackages.xmobar
+      haskellPackages.xmonad
+      haskellPackages.xmonad-contrib
+      haskellPackages.xmonad-extras
+      xorg.xbacklight
+    ];
 
-   fonts = {
-       enableFontDir = true;
-       enableGhostscriptFonts = true;
-       fonts = with pkgs; [
-           corefonts
-           inconsolata
-           ubuntu_font_family
-           unifont
-       ];
-   };
+  fonts = {
+    enableFontDir = true;
+    enableGhostscriptFonts = true;
+    fonts = with pkgs; [
+      corefonts
+      inconsolata
+      ubuntu_font_family
+      unifont
+    ];
+  };
 
   programs.ssh.startAgent = true;
 
