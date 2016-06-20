@@ -17,7 +17,7 @@
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/sda";
 
-  networking.hostName = "dev";
+  networking.hostName = "ga";
   networking.proxy.default = "http://sun-web-intdev.ga.gov.au:2710";
 
   time.timeZone = "Australia/Canberra";
