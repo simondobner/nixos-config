@@ -39,7 +39,8 @@
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs;
+    (import ./common-packages.nix pkgs) ++ [
     firefox
     eclipse-ee-452
     git
