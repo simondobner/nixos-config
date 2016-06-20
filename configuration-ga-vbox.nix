@@ -56,6 +56,8 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  services.postgresql = import ./postgres/postgres-service.nix pkgs;
+
   security.sudo = {
     enable = true;
     wheelNeedsPassword = false;
