@@ -22,7 +22,7 @@
   # virtualisation.virtualbox.host.enable = true;
 
   networking = {
-    hostName = "dev";
+    hostName = "io";
     wireless.enable = true;
   };
 
