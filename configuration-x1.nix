@@ -117,18 +117,7 @@
     windowManager.xmonad.enableContribAndExtras = true;
   };
 
-  services.postgresql = {
-    enable = true;
-    package = pkgs.postgresql95;
-    extraPlugins = [ pkgs.postgis.v_2_2_1 ];
-    authentication =
-        ''
-          local postgres all ident
-          local all lazar ident
-          local all all md5
-          host all all 127.0.0.1/32 md5
-        '';
-  };
+  services.postgresql = import ./postgres/postgres-service.nix pkgs;
 
   security.sudo = {
     enable = true;
