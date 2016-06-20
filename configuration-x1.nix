@@ -29,7 +29,6 @@
   time.timeZone = "Australia/Sydney";
 
   nix = {
-    nixPath = [ "/home/lbodor/dev" "nixos-config=/etc/nixos/configuration.nix" ];
     binaryCaches = [ https://cache.nixos.org http://hydra.cryp.to ];
     binaryCachePublicKeys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
