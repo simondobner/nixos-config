@@ -55,7 +55,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.windowManager.icewm.enable = true;
 
   security.sudo = {
     enable = true;
