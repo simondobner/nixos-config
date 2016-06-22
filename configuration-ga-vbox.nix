@@ -20,7 +20,7 @@
   networking.hostName = "ga";
   networking.proxy.default = "http://sun-web-intdev.ga.gov.au:2710";
   #wireless
-  networking.proxy.default = "http://proxy.inno.lan:3128";
+  #networking.proxy.default = "http://proxy.inno.lan:3128";
 
   time.timeZone = "Australia/Canberra";
 
