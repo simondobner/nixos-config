@@ -47,6 +47,9 @@
           firefox-unwrapped = pkgs.firefox-unwrapped.override {
               enableGTK3 = true;
           };
+          squirrelsql = import ./packages/squirrelsql/default.nix {
+            inherit (pkgs) stdenv fetchurl unzip jre;
+          };
       };
   };
 
@@ -66,6 +69,7 @@
       haskellPackages.xmonad-contrib
       haskellPackages.xmonad-extras
       xorg.xbacklight
+      squirrelsql
     ];
 
   fonts = {
