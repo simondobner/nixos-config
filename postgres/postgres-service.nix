@@ -2,8 +2,8 @@ pkgs: with pkgs;
 
 {
   enable = true;
-  package = pkgs.postgresql95;
-  extraPlugins = [ pkgs.postgis.v_2_2_1 ];
+  package = pkgs.postgresql94;
+  extraPlugins = [ (pkgs.postgis.override { postgresql = pkgs.postgresql94; }).v_2_1_4 ];
   authentication =
     ''
       local all root ident
