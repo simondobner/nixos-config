@@ -2,7 +2,8 @@
   allowUnfree = true;
 
   packageOverrides = super: let self = super.pkgs; in with self; rec {
-    firefox = {
+    # TODO: why doesn't it work without self?
+    self.firefox = {
         enableAdobeFlash = true;
     };
 
@@ -22,6 +23,7 @@
         };
       };
     };
+
     eclipse-ee-46 = super.eclipses.buildEclipse {
       name = "eclipse-ee-4.6";
       description = "Eclipse EE IDE";
