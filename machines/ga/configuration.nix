@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration-ga-vbox.nix
+      ./hardware-configuration.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -24,41 +24,15 @@
 
   time.timeZone = "Australia/Canberra";
 
-  nixpkgs.config = {
-    packageOverrides = pkgs: {
-      # TODO: factor out eclipse packages
-      eclipse-ee-452 = pkgs.eclipses.buildEclipse {
-        name = "eclipse-ee-4.5.2";
-        description = "Eclipse EE IDE";
-        sources = {
-          "x86_64-linux" = pkgs.fetchurl {
-            url = http://download.eclipse.org/technology/epp/downloads/release/mars/2/eclipse-jee-mars-2-linux-gtk-x86_64.tar.gz;
-            sha256 = "0fp2933qs9c7drz98imzis9knyyyi7r8chhvg6zxr7975c6lcmai";
-          };
-        };
-      };
-      eclipse-ee-46 = pkgs.eclipses.buildEclipse {
-        name = "eclipse-ee-4.6";
-        description = "Eclipse EE IDE";
-        sources = {
-          "x86_64-linux" = pkgs.fetchurl {
-            url = https://eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/neon/R/eclipse-jee-neon-R-linux-gtk-x86_64.tar.gz&r=1;
-            sha256 = "1wdq02gswli3wm8j1rlzk4c8d0vpb6qgl8mw31mwn2cvx6wy55rs";
-            name = "eclipse-jee-neon-R-linux-gtk-x86_64.tar.gz";
-          };
-        };
-      };
-    };
-  };
+  nixpkgs.config = import ../../config.nix;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs;
-    import ./common-packages.nix pkgs ++
-    import ./java-packages.nix pkgs ++
-    import ./python-packages.nix pkgs ++ [
-      eclipse-ee-46
-    ];
+  environment.systemPackages = with pkgs; [
+    systemToolsEnv
+    javaEnv
+    pythonEnv
+  ];
 
   # List services that you want to enable:
 
@@ -67,7 +41,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  services.postgresql = import ./postgres/postgres-service.nix pkgs;
+  services.postgresql = import ../../postgres/postgres-service.nix pkgs;
 
   security.sudo = {
     enable = true;
@@ -88,5 +62,4 @@
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "16.03";
   system.autoUpgrade.enable = true;
-
 }
