@@ -76,5 +76,26 @@
         python3
       ];
     };
+
+    buildHaskellEnv = { compiler ? "default" }:
+      let
+        hp = if compiler == "default"
+          then super.haskellPackages
+          else super.haskell.packages.${compiler};
+      in super.buildEnv {
+        name = "haskellEnv-${compiler}";
+        paths = [
+          hp.ghc
+          hp.stack
+          hp.hdevtools
+        ];
+      };
+
+    haskellEnv = buildHaskellEnv {};
+
+    haskellEnv-ghc7103 = buildHaskellEnv {
+      compiler = "ghc7103";
+    };
+
   };
 }
