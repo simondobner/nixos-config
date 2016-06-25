@@ -36,41 +36,26 @@
     ];
   };
 
-  nixpkgs.config = {
-      allowUnfree = true;
-
-      firefox = {
-          enableAdobeFlash = true;
-      };
-
-      packageOverrides = pkgs: rec {
-          firefox-unwrapped = pkgs.firefox-unwrapped.override {
-              enableGTK3 = true;
-          };
-          squirrelsql = import ./packages/squirrelsql/default.nix {
-            inherit (pkgs) stdenv fetchurl unzip jre;
-          };
-      };
-  };
+  nixpkgs.config = import ./config.nix;
 
   # Set SSL_CERT_FILE, so that nix-shell doesn't make it up.
   # See https://github.com/NixOS/nixpkgs/issues/13744.
   environment.variables."SSL_CERT_FILE" = "/etc/ssl/certs/ca-bundle.crt";
 
-  environment.systemPackages = with pkgs;
-    import ./common-packages.nix pkgs ++
-    import ./java-packages.nix pkgs ++
-    import ./python-packages.nix pkgs ++ [
-      cabal2nix
-      dmenu
-      haskellPackages.X11
-      haskellPackages.xmobar
-      haskellPackages.xmonad
-      haskellPackages.xmonad-contrib
-      haskellPackages.xmonad-extras
-      xorg.xbacklight
-      squirrelsql
-    ];
+  environment.systemPackages = with pkgs; [
+    systemToolsEnv
+    javaEnv
+    pythonEnv
+    cabal2nix
+    dmenu
+    haskellPackages.X11
+    haskellPackages.xmobar
+    haskellPackages.xmonad
+    haskellPackages.xmonad-contrib
+    haskellPackages.xmonad-extras
+    xorg.xbacklight
+    squirrelsql
+  ];
 
   fonts = {
     enableFontDir = true;
