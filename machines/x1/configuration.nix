@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./hardware-configuration-x1.nix
+      ./hardware-configuration.nix
     ];
 
   hardware.bluetooth.enable = false;
@@ -36,7 +36,7 @@
     ];
   };
 
-  nixpkgs.config = import ./config.nix;
+  nixpkgs.config = import ../../config.nix;
 
   # Set SSL_CERT_FILE, so that nix-shell doesn't make it up.
   # See https://github.com/NixOS/nixpkgs/issues/13744.
@@ -84,7 +84,7 @@
     windowManager.xmonad.enableContribAndExtras = true;
   };
 
-  services.postgresql = import ./postgres/postgres-service.nix pkgs;
+  services.postgresql = import ../../postgres/postgres-service.nix pkgs;
 
   security.sudo = {
     enable = true;
