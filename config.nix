@@ -10,7 +10,7 @@
         enableGTK3 = true;
     };
 
-    squirrelsql = super.callPackage ./packages/squirrelsql {};
+    squirrelsql = super.callPackage ./pkgs/squirrelsql {};
 
     systemToolsEnv = with super; buildEnv {
       name = "systemToolsEnv";
