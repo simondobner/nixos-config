@@ -36,7 +36,7 @@
     ];
   };
 
-  nixpkgs.config = import ../../nixpkgs.nix;
+  nixpkgs.config = import ../../nixpkgs-config.nix;
 
   # Set SSL_CERT_FILE, so that nix-shell doesn't make it up.
   # See https://github.com/NixOS/nixpkgs/issues/13744.

@@ -24,7 +24,7 @@
 
   time.timeZone = "Australia/Canberra";
 
-  nixpkgs.config = import ../../nixpkgs.nix;
+  nixpkgs.config = import ../../nixpkgs-config.nix;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
