@@ -51,12 +51,12 @@
   # services.xserver.displayManager.kdm.enable = true;
   # services.xserver.desktopManager.kde4.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.extraUsers.lbodor = {
-     isNormalUser = true;
-     uid = 1000;
-     extraGroups = [ "wheel" ];
-   };
+  # Define your user account. Don't forget to set your password with ‘sudo passwd username’.
+  # users.extraUsers.username = {
+  #    isNormalUser = true;
+  #    uid = 1000;
+  #    extraGroups = [ "wheel" ];
+  # };
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "16.03";
