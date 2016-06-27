@@ -7,9 +7,10 @@
         enableAdobeFlash = true;
     };
 
-    firefox-unwrapped = super.firefox-unwrapped.override {
-        enableGTK3 = true;
-    };
+    # TODO: move out
+    # firefox-unwrapped = super.firefox-unwrapped.override {
+    #     enableGTK3 = true;
+    # };
 
     squirrelsql = super.callPackage ./pkgs/squirrelsql {};
 
