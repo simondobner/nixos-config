@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../mixins/postgres/postgres-service.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -40,8 +41,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  services.postgresql = import ../../postgres/postgres-service.nix pkgs;
 
   security.sudo = {
     enable = true;

@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ../../mixins/postgres/postgres-service.nix
     ];
 
   hardware.bluetooth.enable = false;
@@ -83,8 +84,6 @@
     windowManager.xmonad.enable = true;
     windowManager.xmonad.enableContribAndExtras = true;
   };
-
-  services.postgresql = import ../../postgres/postgres-service.nix pkgs;
 
   security.sudo = {
     enable = true;
