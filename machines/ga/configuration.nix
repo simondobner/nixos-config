@@ -19,9 +19,9 @@
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/sda";
 
-  networking.hostName = "ga";
   # networking.proxy.default = "http://sun-web-intdev.ga.gov.au:2710";
   networking.proxy.default = "http://localhost:3128";
+  networking.hostName = "nixos";
 
   time.timeZone = "Australia/Canberra";
 
@@ -38,15 +38,15 @@
   # and put your password into /etc/cntlm.password.
   # Remember to 'chmod 0600 /etc/cntlm.password'.
 
-  # services.cntlm = {
-  #   enable = true;
-  #   username = "your windows u-number";
-  #   domain = "PROD";
-  #   password = import /etc/cntlm.password;
-  #   proxy = ["proxy.ga.gov.au:8080"];
-  #   port = [3128];
-  #   netbios_hostname = "127.0.0.1";
-  # };
+   services.cntlm = {
+     enable = true;
+     username = "u25387";
+     domain = "PROD";
+     password = import /etc/cntlm.password;
+     proxy = ["proxy.ga.gov.au:8080"];
+     port = [3128];
+     netbios_hostname = "127.0.0.1";
+   };
 
   services.openssh.enable = true;
 
