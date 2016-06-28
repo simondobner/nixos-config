@@ -60,7 +60,7 @@
   # users.extraUsers.username = {
   #    isNormalUser = true;
   #    uid = 1000;
-  #    extraGroups = [ "wheel", "tomcat" ];
+  #    extraGroups = [ "wheel" "tomcat" ];
   # };
 
   # The NixOS release to be compatible with for stateful data such as databases.
