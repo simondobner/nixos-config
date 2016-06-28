@@ -42,6 +42,11 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  services.tomcat = {
+    enable = true;
+    package = pkgs.tomcat8;
+  };
+
   security.sudo = {
     enable = true;
     wheelNeedsPassword = false;
@@ -55,7 +60,7 @@
   # users.extraUsers.username = {
   #    isNormalUser = true;
   #    uid = 1000;
-  #    extraGroups = [ "wheel" ];
+  #    extraGroups = [ "wheel", "tomcat" ];
   # };
 
   # The NixOS release to be compatible with for stateful data such as databases.
