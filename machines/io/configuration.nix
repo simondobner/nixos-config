@@ -27,6 +27,8 @@
     wireless.enable = true;
   };
 
+  # networking.proxy.default = "http://proxy.inno.lan:3128";
+
   time.timeZone = "Australia/Sydney";
 
   nix = {
