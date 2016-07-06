@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../mixins/postgres/postgres-service.nix
+      ../../mixins/java-env.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -31,7 +32,6 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     systemToolsEnv
-    javaEnv
     pythonEnv
   ];
 
